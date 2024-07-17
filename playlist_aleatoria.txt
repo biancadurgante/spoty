@@ -1,6 +1,32 @@
-4
-Nome: NATURAL Artista: 14 Bis Trecho: Penso em voce no seu jeito de falar Codigo: 7392
- Nome: ROMANCE Artista: 14 Bis Trecho: Flores simples Codigo: 7693
- Nome: I M NOT IN LOVE Artista: 10 cc Trecho: I m not in love so don t forget it  Codigo: 4920
- Nome: UMA VELHA CANcAO ROCK N ROLL Artista: 14 Bis Trecho: Olhe oh oh oh venha solte seu corpo n Codigo: 9556
+30
+Nome: GAIVOTA DOURADA Artista: Jesse Trecho: Rumo ao sol rumo ao sol Codigo: 7615
+ Nome: THE ROSE Artista: Bette Midler Trecho: Some say love it s a river that Codigo: 4657
+ Nome: LISTEN TO MY HEART Artista: Boa Trecho: Uh baby nani o miteru no  Codigo: 5747
+ Nome: LAMBA TCHAN Artista: E O Tchan Trecho: Pi para piro pi para piro  Codigo: 4275
+ Nome: OTSUKISAN KONBANWA Artista: Fujishima Takeo Trecho: Konna samishii inaka no mura de Codigo: 2228
+ Nome: GENTE HUMILDE Artista: Chico Buarque Trecho: Tem certos dias em que eu penso em Codigo: 3917
+ Nome: A SOMBRA DA AMENDOEIRA Artista: Jorge Aragao Trecho: Que e que eu fiz pra voce nao sei Codigo: 7489
+ Nome: FESTA NA BAHIA Artista: Banda Mel Trecho: Deixei minha linda na praia de Itapu Codigo: 7139
+ Nome: PRA NAO DIZER QUE NAO FALEI DAS FLORES Artista: Geraldo Vandre Trecho: Caminhando e cantando e seguindo  Codigo: 3968
+ Nome: FUTARI DE OSSAKE O  Artista: Azussa Mitiyo Trecho: Uramiko nashi de wakare mashou ne Codigo: 5195
+ Nome: SE ACASO VOCE CHEGASSE Artista: Ciro Monteiro Trecho: Se acaso voce chegasse e no meu Codigo: 3932
+ Nome: DESAFIO Artista: Belo Trecho: Ja virou desafio me apossar  Codigo: 6012
+ Nome: AMIZADE SINCERA Artista: Guilherme e Santiago Trecho: A amizade sincera e um santo remedi Codigo: 1524
+ Nome: KASAN NAKA Artista: Itsuki Hiroshi Trecho: Amewa yabodashi higurewa haku  Codigo: 5723
+ Nome: THE LAZY SONG Artista: Bruno Mars Trecho: Today I don t feel like doing anything Codigo: 19021
+ Nome: PARECE CASTIGO Artista: Joao Bosco e Vincius Trecho: Aonde estou que nao perco a cabeca Codigo: 15131
+ Nome: POR DEUS Artista: Art Popular Trecho: De manha o Sol me diz sexo eu quis  Codigo: 4490
+ Nome: WHO LET IN THE RAIN Artista: Cyndi Lauper Trecho: Things like this Can always take a little time Codigo: 2660
+ Nome: ENCOSTAR NA TUA Artista: Ana Carolina Trecho: Eu quero te roubar pra mim  Codigo: 6694
+ Nome: PASSOS ESCUROS Artista: Hevo84 Trecho: Eu admiro o que me faz voltar a ver a vida Codigo: 15394
+ Nome: MELO DO PIRULITO Artista: Grupo Cafune Trecho: Olha o piu oh  Pirulito Codigo: 3625
+ Nome: KITA MISAKI Artista: Hosokawa Takashi Trecho: Futokoro fukaku omae o daite nanni mo Codigo: 18376
+ Nome: TCHACA Artista: Israel Novaes e Psirico Trecho: Quando ela comeca a arrochar Codigo: 15476
+ Nome: NAO E SERIO Artista: Charlie Brown Jr. e Negra Li Trecho: Eu vejo na TV o que eles falam sobre o jovem nao e serio Codigo: 15074
+ Nome: UP WHERE WE BELONG Artista: Joe Cocker e  Jennifer Warnes Trecho: Who knows what tomorrow brings  Codigo: 4846
+ Nome: SOBA NI IRU NE Artista: Aoyama Thelma feat. SoulJa Trecho: Anata no koto watashi wa ima demo Codigo: 18437
+ Nome: HINO DA VITORIA Artista: CASSIANE Trecho: Quem e o Homem que teve o poder  Codigo: 5613
+ Nome: WANT TO WANT ME Artista: Jason Derulo Trecho: It s too hard to sleep I got the sheets on the floor Codigo: 19445
+ Nome: PORTA ENTREABERTA Artista: Ivan Lins Trecho: Quando voce disse que bateu saudade  Codigo: 6969
+ Nome: HINO DO PALMEIRAS Artista: Hino Do Palmeiras Trecho: Quando surge o Alviverde imponente Codigo: 3427
  

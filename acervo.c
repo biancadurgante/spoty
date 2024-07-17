@@ -277,8 +277,8 @@ void salvaPlaylistaleatoria(struct desc_fila *nova_fila, int tamanho){   //funca
             fprintf(arquivo, "Nome: %s ", aux->info->titulo);
             fprintf(arquivo, "Artista: %s ", aux->info->artista);
             fprintf(arquivo, "Trecho: %s ", aux->info->letra);
-            fprintf(arquivo, "Codigo: %d\n ", aux->info->codigo);
-            fprintf(arquivo, "Execucoes: %d\n ", aux->info->execucoes);
+            fprintf(arquivo, "Codigo: %d ", aux->info->codigo);
+            fprintf(arquivo, "Execucoes: %d\n", aux->info->execucoes);
             aux=aux->prox;
         }
     fclose(arquivo);

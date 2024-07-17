@@ -65,7 +65,8 @@ int main() {
     fclose(arquivo);
 
     do {
-    printf("\n------------------------------SEJA BEM VINDO AO SEU SPOTY------------------------------\n");
+    printf("\n------------------------------SEJA BEM VINDO AO SEU SPOTYFOM------------------------------\n");
+    printf("O tamanho do seu acervo de musicas e: %d\n", acervospoty);
     printf("Escolha uma das opcoes: \n");
     printf("(1) Mostrar o acervo\n(2) Busca\n(3) Criar playlist\n(4) Executar playlist\n(0) Para sair\n");
     scanf("%d", &menu);
@@ -77,6 +78,8 @@ int main() {
                 break;
             
             case 2:
+                printf("\n------------------------------MENU DE BUSCA------------------------------\n");
+
                 printf("\n(1) Busca por Codigo\n(2) Busca por Titulo\n(3) Busca por Artista\n");
                 scanf("%d", &menubusca);
                 
@@ -122,10 +125,12 @@ int main() {
 
             case 3:
                 int tipoplay, tamanhoplay, tamanhoplaypessoal;
+                printf("\n------------------------------MENU DE CRIACAO PLAYLIST------------------------------\n");
+
                 printf("(1) Playlist aleatoria\n(2) Playlist pessoal\n");
                 scanf("%d", &tipoplay);
-               switch(tipoplay){
 
+               switch(tipoplay){
                 case 1:
                     printf("Digite o tamanho da playlist:\n");
                     scanf("%d", &tamanhoplay);
@@ -153,13 +158,13 @@ int main() {
 
             case 4:
               int tipoexec, i=0;
+                printf("\n------------------------------MENU DE EXECUCAO------------------------------\n");
 
                 printf("Escolha a playlist que deseja executar: \n");
                 printf("(1) Aleatoria\n(2) Pessoal\n");
                 scanf("%d", &tipoexec);
                 //printf("O tamanho da sua playlist eh: %d", playlistaletoria->tamanho);
                     switch (tipoexec){
-
                         case 1:
                             while(playlistaletoria->tamanho>0){
                             playlistaletoria->head->info->execucoes ++;
