@@ -24,8 +24,11 @@ struct nodo_LSE * cria_no(struct musica *novamusica);  // recebe o meu dado, no 
 void imprimelista(struct desc_LSE *nova_lista);
 void limpar_buffer();
 void quebraFrase(char *frase, int n, struct desc_LSE * acervo, struct musica * novaMusica);
-struct desc_fila * playaleatoria(struct desc_LSE * acervo, struct desc_fila *nova_fila);
+struct desc_fila * playaleatoria(struct desc_LSE * acervo, struct desc_fila *nova_fila, int tamanhoplay);
 struct nodo_LSE * buscaposicao(struct desc_LSE * acervo, int posicao);
-struct desc_Pilha * playpessoal(struct desc_LSE * acervo, struct desc_Pilha *nova_pilha);
+struct desc_Pilha * playpessoal(struct desc_LSE * acervo, struct desc_Pilha *nova_pilha, int tamanhoplaypessoal);
 void buscatitulo(struct desc_LSE *acervo, int tamanho);
 void buscaartista(struct desc_LSE *acervo, int tamanho);
+void salvaPlaylistaleatoria(struct desc_fila *nova_fila, int tamanho);   //funcao salva arquivo texto
+void salvaPlaylistpessoal(struct desc_Pilha *nova_Pilha, int tamanho);   //funcao salva arquivo texto
+void salvaacervo(struct desc_LSE *nova_lista, int tamanho);   //funcao salva arquivo texto

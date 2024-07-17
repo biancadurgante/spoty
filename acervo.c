@@ -128,19 +128,15 @@ struct nodo_LSE * buscaposicao(struct desc_LSE * acervo, int posicao){
 
 
 //cria a playlist pela fila
-struct desc_fila * playaleatoria(struct desc_LSE * acervo, struct desc_fila *nova_fila){
-    int tamanhoplay, i; 
+struct desc_fila * playaleatoria(struct desc_LSE * acervo, struct desc_fila *nova_fila, int tamanhoplay){
+    int i; 
     int posicao = 0;
     struct musica *musica = NULL;
 
     struct nodo_LSE *aleatorio = NULL;
     //aleatorio=cria_no(musica); //malloca o meu no pra eu poder receber o no da funcao posicao
 
-    printf("Digite o tamanho da playlist:\n");
-    scanf("%d", &tamanhoplay);
-
-
-    //quando randomposicao for igual a posicao do acervo
+      //quando randomposicao for igual a posicao do acervo
     for (i=0; i<tamanhoplay; i++){
        posicao = rand()%acervo->tamanho;
        //aleatorio=cria_no(musica); //malloca o meu no pra eu poder receber o no da funcao posicao
@@ -151,16 +147,13 @@ struct desc_fila * playaleatoria(struct desc_LSE * acervo, struct desc_fila *nov
     return nova_fila;
 }
 
-struct desc_Pilha * playpessoal(struct desc_LSE * acervo, struct desc_Pilha *nova_pilha){
+struct desc_Pilha * playpessoal(struct desc_LSE * acervo, struct desc_Pilha *nova_pilha, int tamanhoplaypessoal){
 
-    int tamanhoplaypessoal, i=0;
+    int i=0;
     int posicao=0;
     struct musica *musica=NULL;
     struct nodo_LSE *pessoal = NULL;
 
-    printf("Digite o tamanho da playlist: \n");
-    scanf("%d", &tamanhoplaypessoal);
- 
         for (i=0; i<tamanhoplaypessoal; i++){
         printf("Digite a posicao da musica que deseja adicionar na sua playlist: \n");
         scanf ("%d", &posicao);
@@ -232,3 +225,61 @@ void buscaartista(struct desc_LSE *acervo, int tamanho) {
         printf("Artista não encontrado.\n");
     }
 }
+
+void salvaPlaylistaleatoria(struct desc_fila *nova_fila, int tamanho){   //funcao salva arquivo texto
+    FILE *arquivo;
+    int i=0;
+    struct nodo_LSE *aux = nova_fila->head;
+
+    if((arquivo=fopen("playlist_aleatoria.txt", "w")) == NULL){
+        printf("Erro ao abrir arquivo.\n");
+    }
+        fprintf(arquivo, "%d\n", tamanho);
+        for(i=0; i<tamanho; i++){
+            fprintf(arquivo, "Nome: %s ", aux->info->titulo);
+            fprintf(arquivo, "Artista: %s ", aux->info->artista);
+            fprintf(arquivo, "Trecho: %s ", aux->info->letra);
+            fprintf(arquivo, "Codigo: %d\n ", aux->info->codigo);
+            aux=aux->prox;
+        }
+    fclose(arquivo);
+    }
+
+    void salvaPlaylistpessoal(struct desc_Pilha *nova_Pilha, int tamanho){   //funcao salva arquivo texto
+    FILE *arquivo;
+    int i=0;
+    struct nodo_LSE *aux = nova_Pilha->Topo;
+
+    if((arquivo=fopen("playlist_pessoal.txt", "w")) == NULL){
+        printf("Erro ao abrir arquivo.\n");
+    }
+        fprintf(arquivo, "%d\n", tamanho);
+        for(i=0; i<tamanho; i++){
+            fprintf(arquivo, "Nome: %s ", aux->info->titulo);
+            fprintf(arquivo, "Artista: %s ", aux->info->artista);
+            fprintf(arquivo, "Trecho: %s ", aux->info->letra);
+            fprintf(arquivo, "Codigo: %d\n ", aux->info->codigo);
+            aux=aux->prox;
+        }
+    fclose(arquivo);
+    }
+
+    void salvaacervo(struct desc_LSE *nova_lista, int tamanho){   //funcao salva arquivo texto
+    FILE *arquivo;
+    int i=0;
+    struct nodo_LSE *aux = nova_lista->LSE;
+
+    if((arquivo=fopen("acervo.txt", "w")) == NULL){
+        printf("Erro ao abrir arquivo.\n");
+    }
+        fprintf(arquivo, "%d\n", tamanho);
+        for(i=0; i<tamanho; i++){
+            fprintf(arquivo, "Nome: %s ", aux->info->titulo);
+            fprintf(arquivo, "Artista: %s ", aux->info->artista);
+            fprintf(arquivo, "Trecho: %s ", aux->info->letra);
+            fprintf(arquivo, "Codigo: %d\n ", aux->info->codigo);
+            fprintf(arquivo, "Execucoes: %d\n ", aux->info->execucoes);
+            aux=aux->prox;
+        }
+    fclose(arquivo);
+    }

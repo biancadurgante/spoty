@@ -121,20 +121,27 @@ int main() {
                 break; //break do menu principal
 
             case 3:
-                int tipoplay;
+                int tipoplay, tamanhoplay, tamanhoplaypessoal;
                 printf("(1) Playlist aleatoria\n(2) Playlist pessoal\n");
                 scanf("%d", &tipoplay);
                switch(tipoplay){
 
                 case 1:
-                    playlistaletoria=playaleatoria(acervo, playlistaletoria);
+                    printf("Digite o tamanho da playlist:\n");
+                    scanf("%d", &tamanhoplay);
+                    playlistaletoria=playaleatoria(acervo, playlistaletoria, tamanhoplay);
                     imprimefila(playlistaletoria);
+                    salvaPlaylistaleatoria(playlistaletoria, tamanhoplay);   //funcao salva arquivo texto
+
                 break;
 
                 case 2:
-
-                    playlistpessoal=playpessoal(acervo, playlistpessoal);
+                    printf("Digite o tamanho da playlist:\n");
+                    scanf("%d", &tamanhoplaypessoal);
+                    playlistpessoal=playpessoal(acervo, playlistpessoal, tamanhoplaypessoal);
                     imprimePilha(playlistpessoal);
+                    salvaPlaylistpessoal(playlistpessoal, tamanhoplaypessoal);   //funcao salva arquivo texto
+
 
                 break;
 
@@ -157,6 +164,7 @@ int main() {
                             while(playlistaletoria->tamanho>0){
                             playlistaletoria->head->info->execucoes ++;
                             playlistaletoria = removefila(playlistaletoria);
+                            salvaacervo(acervo, acervospoty);   //funcao salva arquivo texto
 
                             }  
                         break;
@@ -165,6 +173,8 @@ int main() {
                             while(playlistpessoal->tamanho>0){
                                 playlistpessoal->Topo->info->execucoes ++;
                                 playlistpessoal=removepilha(playlistpessoal);
+                                salvaacervo(acervo, acervospoty);   //funcao salva arquivo texto
+
                             }
                             break;
                         
