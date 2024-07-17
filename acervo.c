@@ -3,6 +3,7 @@
 #include <string.h>
 #include "acervo.h"
 #include "fila.h"
+#include "pilha.h"
 
 struct desc_LSE * nova_lista() {  // cria e malloca o descritor
     struct desc_LSE *novalista = (struct desc_LSE *)malloc(sizeof(struct desc_LSE));
@@ -90,11 +91,11 @@ void imprimelista(struct desc_LSE *nova_lista) {
 
     while (aux != NULL) {
         printf("\n------------------------------------------------");
-        printf("\nNome: %s", aux->info->titulo);
-        printf("Artista: %s", aux->info->artista);
-        printf("Trecho: %s", aux->info->letra);
-        printf("Codigo: %d\n", aux->info->codigo);
-        printf("Execucoes: %d", aux->info->execucoes);
+        printf("\nNome: %s ", aux->info->titulo);
+        printf("Artista: %s ", aux->info->artista);
+        printf("Trecho: %s ", aux->info->letra);
+        printf("Codigo: %d\n ", aux->info->codigo);
+        printf("Execucoes: %d ", aux->info->execucoes);
         printf("\n------------------------------------------------\n");
         aux = aux->prox;
     }
@@ -135,7 +136,7 @@ struct desc_fila * playaleatoria(struct desc_LSE * acervo, struct desc_fila *nov
     struct nodo_LSE *aleatorio = NULL;
     //aleatorio=cria_no(musica); //malloca o meu no pra eu poder receber o no da funcao posicao
 
-    printf("Digite o tamanho da playlist\n");
+    printf("Digite o tamanho da playlist:\n");
     scanf("%d", &tamanhoplay);
 
 
@@ -150,3 +151,28 @@ struct desc_fila * playaleatoria(struct desc_LSE * acervo, struct desc_fila *nov
     return nova_fila;
 }
 
+struct desc_Pilha * playpessoal(struct desc_LSE * acervo, struct desc_Pilha *nova_pilha){
+
+    int tamanhoplaypessoal, i=0;
+    int posicao=0;
+    struct musica *musica=NULL;
+    struct nodo_LSE *pessoal = NULL;
+
+    printf("Digite o tamanho da playlist: \n");
+    scanf("%d", &tamanhoplaypessoal);
+ 
+        for (i=0; i<tamanhoplaypessoal; i++){
+        printf("Digite a posicao da musica que deseja adicionar na sua playlist: \n");
+        scanf ("%d", &posicao);
+        if (posicao>acervo->tamanho){
+            printf("Posicao invalida\n");
+            i--;
+        }
+        else{
+            pessoal=cria_no(buscaposicao(acervo, posicao)->info);
+            nova_pilha=insere_pilha(nova_pilha, pessoal);
+        }
+        }
+        return nova_pilha;
+
+}

@@ -10,10 +10,6 @@ struct desc_fila * nova_fila(){  //cria e malloca o descritor
     novafila->head=NULL;
     novafila->tail=NULL;
     novafila->tamanho=0;
-    
-    printf("\n------------------------------------------------");
-    printf("\nFila criada!");
-    printf("\n------------------------------------------------");
     return novafila; 
 }
 
@@ -53,10 +49,6 @@ struct desc_fila * insere_fila(struct desc_fila *nova_fila, struct nodo_LSE *no)
     }
     nova_fila->tamanho++;
     nova_fila->tail=no;
-
-    printf("\n------------------------------------------------");
-    printf("\nMusica inserida na fila!");
-    printf("\n------------------------------------------------");
     return nova_fila;
     
 }

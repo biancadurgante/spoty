@@ -3,6 +3,7 @@
 #include <string.h>
 #include "acervo.h"
 #include "fila.h"
+#include "pilha.h"
 #include <time.h>
 
 void quebraFrase(char *frase, int i, struct desc_LSE *acervo, struct musica *novaMusica);
@@ -14,11 +15,13 @@ int main() {
     struct musica *novaMusica = NULL;
     struct desc_LSE *acervo = NULL;
     struct desc_fila *playlistaletoria = NULL;
+    struct desc_Pilha *playlistpessoal = NULL;
 
 
     //descritores
-
-    playlistaletoria= nova_fila();
+    
+    playlistaletoria = nova_fila();
+    playlistpessoal = nova_pilha();
     acervo = nova_lista();  // cria e malloca o descritor
 
 
@@ -115,13 +118,25 @@ int main() {
 
             case 3:
                 int tipoplay;
-                printf("(1)Playlist aleatoria\n");
+                printf("(1) Playlist aleatoria\n(2) Playlist pessoal\n");
                 scanf("%d", &tipoplay);
-               
-                playlistaletoria=playaleatoria(acervo, playlistaletoria);
+               switch(tipoplay){
 
-                imprimefila(playlistaletoria);
+                case 1:
+                    playlistaletoria=playaleatoria(acervo, playlistaletoria);
+                    imprimefila(playlistaletoria);
+                break;
 
+                case 2:
+
+                    playlistpessoal=playpessoal(acervo, playlistpessoal);
+                    imprimePilha(playlistpessoal);
+
+                break;
+
+                default:
+                break;
+               }
             break;
 
 
@@ -129,7 +144,7 @@ int main() {
               int tipoexec, i=0;
 
                 printf("Escolha a playlist que deseja executar: \n");
-                printf("(1) Aleatoria\n");
+                printf("(1) Aleatoria\n(2) Pessoal\n");
                 scanf("%d", &tipoexec);
                 //printf("O tamanho da sua playlist eh: %d", playlistaletoria->tamanho);
                     switch (tipoexec){
@@ -139,17 +154,25 @@ int main() {
                             playlistaletoria->head->info->execucoes ++;
                             playlistaletoria = removefila(playlistaletoria);
 
-                        }  
+                            }  
+                        break;
+
+                        case 2:
+                            while(playlistpessoal->tamanho>0){
+                                playlistpessoal->Topo->info->execucoes ++;
+                                playlistpessoal=removepilha(playlistpessoal);
+                            }
                             break;
                         
                         default:
-                            break;
+                        break;
                     }
 
             break;
                 
             default:
-                break;
+            break;
+        
         }
     } while (menu != 0);
 
