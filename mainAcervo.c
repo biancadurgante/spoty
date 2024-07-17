@@ -64,7 +64,7 @@ int main() {
     do {
     printf("\n------------------------------SEJA BEM VINDO AO SEU SPOTY------------------------------\n");
     printf("Escolha uma das opcoes: \n");
-    printf("(1) Mostrar o acervo\n(2) Busca\n(3) Criar playlist\n(0) Para sair\n");
+    printf("(1) Mostrar o acervo\n(2) Busca\n(3) Criar playlist\n(4) Executar playlist\n(0) Para sair\n");
     scanf("%d", &menu);
 
         switch (menu) {
@@ -92,6 +92,7 @@ int main() {
                             printf("Artista: %s", aux->info->artista);
                             printf("Trecho: %s", aux->info->letra);
                             printf("Codigo: %d\n", aux->info->codigo);
+                            printf("Execucoes: %d", aux->info->execucoes);
                             printf("\n------------------------------------------------\n");
                         }
                         aux = aux->prox;
@@ -120,6 +121,30 @@ int main() {
                 playlistaletoria=playaleatoria(acervo, playlistaletoria);
 
                 imprimefila(playlistaletoria);
+
+            break;
+
+
+            case 4:
+              int tipoexec, i=0;
+
+                printf("Escolha a playlist que deseja executar: \n");
+                printf("(1) Aleatoria\n");
+                scanf("%d", &tipoexec);
+                //printf("O tamanho da sua playlist eh: %d", playlistaletoria->tamanho);
+                    switch (tipoexec){
+
+                        case 1:
+                            while(playlistaletoria->tamanho>0){
+                            playlistaletoria->head->info->execucoes ++;
+                            playlistaletoria = removefila(playlistaletoria);
+
+                        }  
+                            break;
+                        
+                        default:
+                            break;
+                    }
 
             break;
                 

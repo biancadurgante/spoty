@@ -94,6 +94,7 @@ void imprimelista(struct desc_LSE *nova_lista) {
         printf("Artista: %s", aux->info->artista);
         printf("Trecho: %s", aux->info->letra);
         printf("Codigo: %d\n", aux->info->codigo);
+        printf("Execucoes: %d", aux->info->execucoes);
         printf("\n------------------------------------------------\n");
         aux = aux->prox;
     }
