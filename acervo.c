@@ -176,3 +176,30 @@ struct desc_Pilha * playpessoal(struct desc_LSE * acervo, struct desc_Pilha *nov
         return nova_pilha;
 
 }
+
+void buscatitulo(struct desc_LSE *acervo, int tamanho) {
+    struct nodo_LSE *aux = acervo->LSE;
+    char titulo[256];
+    int i;
+
+    printf("Informe o título: ");
+    setbuf(stdin, NULL);
+    fgets(titulo, 256, stdin);
+    titulo[strcspn(titulo, "\n")] = '\0';
+
+    for (i = 0; i < tamanho; i++) {
+        if (strcmp(titulo, aux->info->titulo) == 0) {
+            printf("\n------------------------------------------------");
+            printf("\nNome: %s ", aux->info->titulo);
+            printf("Artista: %s ", aux->info->artista);
+            printf("Trecho: %s ", aux->info->letra);
+            printf("Codigo: %d\n ", aux->info->codigo);
+            printf("Execucoes: %d ", aux->info->execucoes);
+            printf("\n------------------------------------------------\n");
+            return;  // Encerra a busca ao encontrar o título
+        }
+        aux = aux->prox;
+    }
+
+    printf("Título não encontrado.\n");
+}

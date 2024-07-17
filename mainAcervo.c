@@ -104,6 +104,8 @@ int main() {
                     break;
 
                     case 2:
+                    buscatitulo(acervo, acervospoty);
+
                     break;
 
                     case 3:

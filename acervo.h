@@ -27,3 +27,4 @@ void quebraFrase(char *frase, int n, struct desc_LSE * acervo, struct musica * n
 struct desc_fila * playaleatoria(struct desc_LSE * acervo, struct desc_fila *nova_fila);
 struct nodo_LSE * buscaposicao(struct desc_LSE * acervo, int posicao);
 struct desc_Pilha * playpessoal(struct desc_LSE * acervo, struct desc_Pilha *nova_pilha);
+void buscatitulo(struct desc_LSE *acervo, int tamanho);
