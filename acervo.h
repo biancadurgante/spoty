@@ -24,3 +24,5 @@ struct nodo_LSE * cria_no(struct musica *novamusica);  // recebe o meu dado, no 
 void imprimelista(struct desc_LSE *nova_lista);
 void limpar_buffer();
 void quebraFrase(char *frase, int n, struct desc_LSE * acervo, struct musica * novaMusica);
+struct desc_fila * playaleatoria(struct desc_LSE * acervo, struct desc_fila *nova_fila);
+struct nodo_LSE * buscaposicao(struct desc_LSE * acervo, int posicao);

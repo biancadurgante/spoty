@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "acervo.h"
+#include "fila.h"
 
 struct desc_LSE * nova_lista() {  // cria e malloca o descritor
     struct desc_LSE *novalista = (struct desc_LSE *)malloc(sizeof(struct desc_LSE));
@@ -102,3 +103,49 @@ void limpar_buffer() {
     int c;
     while ((c = getchar()) != '\n' && c != EOF) { }
 }
+
+struct nodo_LSE * buscaposicao(struct desc_LSE * acervo, int posicao){
+
+    struct nodo_LSE * aux = acervo->LSE; //cria o auxiliar e já aponta para o descritor pq eu sempre vou retornar um no do meu acervo
+    int i=0;
+    
+    if(posicao > acervo->tamanho){
+        printf("Posicao invalida!");
+        aux=NULL; //se a posicao for maior que o acervo eu invalido o no e retorno ele vazio
+        return aux;
+    }
+    else{
+
+        for (i=0; i<posicao; i++){
+            aux = aux->prox;
+
+        }
+            return aux;
+    }
+}
+
+
+//cria a playlist pela fila
+struct desc_fila * playaleatoria(struct desc_LSE * acervo, struct desc_fila *nova_fila){
+    int tamanhoplay, i; 
+    int posicao = 0;
+    struct musica *musica = NULL;
+
+    struct nodo_LSE *aleatorio = NULL;
+    //aleatorio=cria_no(musica); //malloca o meu no pra eu poder receber o no da funcao posicao
+
+    printf("Digite o tamanho da playlist\n");
+    scanf("%d", &tamanhoplay);
+
+
+    //quando randomposicao for igual a posicao do acervo
+    for (i=0; i<tamanhoplay; i++){
+       posicao = rand()%acervo->tamanho;
+       //aleatorio=cria_no(musica); //malloca o meu no pra eu poder receber o no da funcao posicao
+       aleatorio=cria_no(buscaposicao(acervo, posicao)->info); //malloca o meu no pra eu poder receber o no da funcao posicao
+       //aleatorio=buscaposicao(acervo, posicao);
+       nova_fila=insere_fila(nova_fila, aleatorio);
+    }
+    return nova_fila;
+}
+

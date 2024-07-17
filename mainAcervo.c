@@ -2,17 +2,27 @@
 #include <stdlib.h>
 #include <string.h>
 #include "acervo.h"
+#include "fila.h"
+#include <time.h>
 
 void quebraFrase(char *frase, int i, struct desc_LSE *acervo, struct musica *novaMusica);
 
 int main() {
+    srand(time(NULL));
     int i = 0;
     char linha, frase[256];
     struct musica *novaMusica = NULL;
     struct desc_LSE *acervo = NULL;
+    struct desc_fila *playlistaletoria = NULL;
 
+
+    //descritores
+
+    playlistaletoria= nova_fila();
     acervo = nova_lista();  // cria e malloca o descritor
 
+
+    //outras variaveis
     int menu, menubusca;
     int acervospoty;
 
@@ -101,6 +111,17 @@ int main() {
                 }
                 
                 break; //break do menu principal
+
+            case 3:
+                int tipoplay;
+                printf("(1)Playlist aleatoria\n");
+                scanf("%d", &tipoplay);
+               
+                playlistaletoria=playaleatoria(acervo, playlistaletoria);
+
+                imprimefila(playlistaletoria);
+
+            break;
                 
             default:
                 break;
