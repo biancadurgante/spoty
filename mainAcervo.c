@@ -109,6 +109,8 @@ int main() {
                     break;
 
                     case 3:
+                    buscaartista(acervo, acervospoty);
+
                     break;
 
                     default:

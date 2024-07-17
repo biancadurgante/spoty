@@ -203,3 +203,32 @@ void buscatitulo(struct desc_LSE *acervo, int tamanho) {
 
     printf("Título não encontrado.\n");
 }
+
+void buscaartista(struct desc_LSE *acervo, int tamanho) {
+    struct nodo_LSE *aux = acervo->LSE;
+    char artista[256];
+    int encontrou = 0;
+
+    printf("Informe o artista: ");
+    setbuf(stdin, NULL);
+    fgets(artista, 256, stdin);
+    artista[strcspn(artista, "\n")] = '\0';
+
+    while (aux != NULL) { 
+        if (strcmp(artista, aux->info->artista) == 0) {
+            printf("\n------------------------------------------------");
+            printf("\nNome: %s ", aux->info->titulo);
+            printf("Artista: %s ", aux->info->artista);
+            printf("Trecho: %s ", aux->info->letra);
+            printf("Codigo: %d\n ", aux->info->codigo);
+            printf("Execucoes: %d ", aux->info->execucoes);
+            printf("\n------------------------------------------------\n");
+            encontrou = 1;
+        }
+        aux = aux->prox;
+    }
+
+    if (encontrou!=1) {
+        printf("Artista não encontrado.\n");
+    }
+}

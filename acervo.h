@@ -28,3 +28,4 @@ struct desc_fila * playaleatoria(struct desc_LSE * acervo, struct desc_fila *nov
 struct nodo_LSE * buscaposicao(struct desc_LSE * acervo, int posicao);
 struct desc_Pilha * playpessoal(struct desc_LSE * acervo, struct desc_Pilha *nova_pilha);
 void buscatitulo(struct desc_LSE *acervo, int tamanho);
+void buscaartista(struct desc_LSE *acervo, int tamanho);
